@@ -67,3 +67,5 @@ Traceback (most recent call last):
 AttributeError: 'dict' object has no attribute 'has_key'
 ```
 line 39: if word_id not in word_dict.keys():
+## tips
+1. the root for example/nytimes/py is /example not /LightLDA, so you need to run the nytimes.py in LightLAD/example.
