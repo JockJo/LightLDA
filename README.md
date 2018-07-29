@@ -39,3 +39,31 @@ Microsoft Open Source Code of Conduct
 ------------
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+
+
+## Question
+### multiverso
+If the downloading is too slowly when running the build shell, you can change the source for downloading. 
+```
+git clone -b multiverso-initial https://github.com/Microsoft/multiverso.git.
+```
+### zeromq
+If the downloading is too slowly when running the build shell, you can change the source for downloading.
+```https://github.com/zeromq/zeromq4-1/releases/download/v4.1.3/zeromq-4.1.3.tar.gz
+```
+### text2libsvm.py
+If you want ro run the example/nytimes.sh in python3.x, you should rewrite text2libxvm.py that is running in python2.My revisement is below.
+```
+  File "/home/jockjo/LightLDA/example/text2libsvm.py", line 13
+    print "Usage: python text2libsvm.py <docword.input> <vocab.input> <libsvm.output> <dict.output>"
+                                                                                                   ^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Usage: python text2libsvm.py <docword.input> <vocab.input> <libsvm.output> <dict.output>")?
+```
+line 13: print("Usage: python text2libsvm.py <docword.input> <vocab.input> <libsvm.output> <dict.output>")
+```
+Traceback (most recent call last):
+  File "/home/jockjo/LightLDA/example/text2libsvm.py", line 39, in <module>
+    if not word_dict.has_key(word_id):
+AttributeError: 'dict' object has no attribute 'has_key'
+```
+line 39: if word_id not in word_dict.keys():
