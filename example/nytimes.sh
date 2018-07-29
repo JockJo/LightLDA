@@ -9,9 +9,12 @@ mkdir -p $dir
 cd $dir
 
 # 1. Download the data
-wget https://archive.ics.uci.edu/ml/machine-learning-databases/bag-of-words/docword.nytimes.txt.gz
-gunzip $dir/docword.nytimes.txt.gz
-wget https://archive.ics.uci.edu/ml/machine-learning-databases/bag-of-words/vocab.nytimes.txt
+#initial source
+#wget https://archive.ics.uci.edu/ml/machine-learning-databases/bag-of-words/docword.nytimes.txt.gz
+#change the source for downloading
+#wget https://s3-eu-west-1.amazonaws.com/artm/docword.nytimes.txt.gz
+#gunzip $dir/docword.nytimes.txt.gz
+#wget https://archive.ics.uci.edu/ml/machine-learning-databases/bag-of-words/vocab.nytimes.txt
 
 # 2. UCI format to libsvm format
 python $root/text2libsvm.py $dir/docword.nytimes.txt $dir/vocab.nytimes.txt $dir/nytimes.libsvm $dir/nytimes.word_id.dict

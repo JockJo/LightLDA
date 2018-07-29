@@ -10,7 +10,7 @@ python text2libsvm.py <docword.input> <vocab.input> <libsvm.output> <dict.output
 import sys
 
 if len(sys.argv) != 5:
-    print "Usage: python text2libsvm.py <docword.input> <vocab.input> <libsvm.output> <dict.output>"
+    print("Usage: python text2libsvm.py <docword.input> <vocab.input> <libsvm.output> <dict.output>")
     exit(1)
 
 data_file = open(sys.argv[1], 'r')
@@ -36,7 +36,7 @@ while line:
         doc_id = int(col[0])
         word_id = int(col[1]) - 1
         word_count = int(col[2])
-        if not word_dict.has_key(word_id):
+        if word_id not in word_dict.keys():
             word_dict[word_id] = 0
         word_dict[word_id] += word_count
         if doc_id != last_doc_id:
